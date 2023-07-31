@@ -87,7 +87,9 @@ class PortfolioCategory(MPTTModel):
 class Portfolio(models.Model):
 
     imagename = models.CharField(max_length=255)
-    image = models.ImageField(upload_to="portfolio/img/")
+    image = models.ImageField(upload_to="portfolio/img/", blank=True, null=True)
+    video = models.FileField(upload_to="portfolio/video/", blank=True, null=True)
+    category = models.ForeignKey(PortfolioCategory, blank=True, null=True, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return self.imagename
