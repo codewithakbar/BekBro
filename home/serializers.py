@@ -23,12 +23,14 @@ class PortfolioCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = PortfolioCategory
         fields = '__all__'
-
+        depth = 1
+        
 
 class PortfolioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Portfolio
         fields = '__all__'
+        depth = 1
 
 
 class ServiceSerializer(serializers.ModelSerializer):
