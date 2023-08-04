@@ -26,10 +26,12 @@ class AboutMe(models.Model):
         return self.title
     
 
+    class Meta:
+        verbose_name = "Men Xaqimda"
+        verbose_name_plural = "Men Xaqimda"
+    
 
 class Education(models.Model):
-
-    """ Сочетание навыков и опыта || Combination of Skill & Experience """
 
     title = models.CharField(max_length=234)
     mini_title = models.CharField(max_length=234)
@@ -37,10 +39,6 @@ class Education(models.Model):
     description = models.TextField()
 
     yillar = models.TextField()
-
-
-    def __str__(self) -> str:
-        return self.title
 
 
 
@@ -56,6 +54,11 @@ class Experience(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+    class Meta:
+        verbose_name = "Soha haqida"
+        verbose_name_plural = "Sohalar haqida"
 
 
 
@@ -150,5 +153,14 @@ class Contact(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+#                                  Inline Models                                 
+
+class Konikmalar(models.Model):
+    experience = models.ForeignKey(to=Experience, null=True, blank=True, on_delete=models.CASCADE)
+
+    title = models.CharField(max_length=233, null=True, blank=True)
+    foiz = models.IntegerField(default=90)
 
 

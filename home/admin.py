@@ -1,9 +1,13 @@
 from django.contrib import admin
 
 from .models import (
-        AboutMe, Education, Experience, PortfolioCategory, Portfolio, Service, 
-        Testimonials, Blog, Contact
+        AboutMe, Experience, PortfolioCategory, Portfolio, Service, 
+        Testimonials, Blog, Contact, Konikmalar
     )
+
+
+class KonikmalarInline(admin.StackedInline):
+    model = Konikmalar
 
 
 @admin.register(AboutMe)
@@ -11,14 +15,9 @@ class AboutMeAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Education)
-class EducationAdmin(admin.ModelAdmin):
-    pass
-
-
 @admin.register(Experience)
 class ExperienceAdmin(admin.ModelAdmin):
-    pass
+    inlines = [KonikmalarInline]
 
 
 @admin.register(PortfolioCategory)
