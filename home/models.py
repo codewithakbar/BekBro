@@ -94,6 +94,8 @@ class Portfolio(models.Model):
     video = models.FileField(upload_to="portfolio/video/", blank=True, null=True)
     category = models.ForeignKey(PortfolioCategory, blank=True, null=True, on_delete=models.CASCADE)
 
+    title_video = models.CharField(max_length=223)
+
     def __str__(self) -> str:
         return self.imagename
 
@@ -171,4 +173,3 @@ class Konikmalar(models.Model):
         verbose_name = "Konikma"
         verbose_name_plural = "Konikmalar"
 
-        
