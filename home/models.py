@@ -158,9 +158,17 @@ class Contact(models.Model):
 #                                  Inline Models                                 
 
 class Konikmalar(models.Model):
-    experience = models.ForeignKey(to=Experience, null=True, blank=True, on_delete=models.CASCADE)
+    # experience = models.ForeignKey(to=Experience, null=True, blank=True, on_delete=models.CASCADE)
 
     title = models.CharField(max_length=233, null=True, blank=True)
     foiz = models.IntegerField(default=90)
 
+    def __str__(self) -> str:
+        return self.title
+    
 
+    class Meta:
+        verbose_name = "Konikma"
+        verbose_name_plural = "Konikmalar"
+
+        

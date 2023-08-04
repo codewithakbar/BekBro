@@ -17,8 +17,7 @@ class AboutMeAdmin(admin.ModelAdmin):
 
 @admin.register(Experience)
 class ExperienceAdmin(admin.ModelAdmin):
-    inlines = [KonikmalarInline]
-
+    pass
 
 @admin.register(PortfolioCategory)
 class PortfolioCategoryAdmin(admin.ModelAdmin):
@@ -49,4 +48,7 @@ class BlogAdmin(admin.ModelAdmin):
 class ContactAdmin(admin.ModelAdmin):
     pass
 
+@admin.register(Konikmalar)
+class KonikmalarAdmin(admin.ModelAdmin):
+    pass
 

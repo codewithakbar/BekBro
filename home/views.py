@@ -1,11 +1,16 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 
-from .models import AboutMe, Education, Experience, PortfolioCategory, Portfolio, Service, Testimonials, Blog, Contact
+from .models import (
+        AboutMe, Education, Experience, PortfolioCategory, Portfolio, Service, 
+        Testimonials, Blog, Contact, Konikmalar
+    )
+
 from .serializers import (
     AboutMeSerializer,
     EducationSerializer,
     ExperienceSerializer,
+    KonikmalarSerializer,
     PortfolioCategorySerializer,
     PortfolioSerializer,
     ServiceSerializer,
@@ -67,3 +72,10 @@ class ContactViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
+
+
+class KonikmalarViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticatedOrReadOnly]
+    queryset = Konikmalar.objects.all()
+    serializer_class = KonikmalarSerializer
+

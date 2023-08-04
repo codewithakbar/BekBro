@@ -32,6 +32,7 @@ from home.views import (
     TestimonialsViewSet,
     BlogViewSet,
     ContactViewSet,
+    KonikmalarViewSet
 )
 
 router = routers.DefaultRouter()
@@ -44,6 +45,7 @@ router.register('service', ServiceViewSet)
 router.register('testimonials', TestimonialsViewSet)
 router.register('blog', BlogViewSet)
 router.register('contact', ContactViewSet)
+router.register('konikmalar', KonikmalarViewSet)
 
 
 urlpatterns = [

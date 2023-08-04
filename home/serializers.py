@@ -1,6 +1,8 @@
 from rest_framework import serializers
-from .models import AboutMe, Education, Experience, PortfolioCategory, Portfolio, Service, Testimonials, Blog, Contact
-
+from .models import (
+        AboutMe, Education, Experience, PortfolioCategory, Portfolio, Service, 
+        Testimonials, Blog, Contact, Konikmalar
+    )
 class AboutMeSerializer(serializers.ModelSerializer):
     class Meta:
         model = AboutMe
@@ -55,3 +57,10 @@ class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
         fields = '__all__'
+
+
+class KonikmalarSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Konikmalar
+        fields = '__all__'
+
